@@ -1,0 +1,17 @@
+<table class="table  table-striped">
+  <tr>
+    <th>#</th>
+    <th>Link</th>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+{{range .}}
+  <tr>
+    <td>{{.Id}}</td>
+    <td><a href="{{.Url}}">∞</a></td>
+    <td>{{.Title}}</td>
+    <td>{{.Description}}</td>
+  </tr>
+{{end}}
+</table>
