@@ -1,0 +1,47 @@
+{
+	"ImportPath": "github.com/matiasdoyle/checkout",
+	"GoVersion": "go1.3",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/go.crypto/bcrypt",
+			"Comment": "null-215",
+			"Rev": "2a61df2221b6be21be1c1ded77821b0f71b29584"
+		},
+		{
+			"ImportPath": "code.google.com/p/go.crypto/blowfish",
+			"Comment": "null-215",
+			"Rev": "2a61df2221b6be21be1c1ded77821b0f71b29584"
+		},
+		{
+			"ImportPath": "github.com/codegangsta/inject",
+			"Comment": "v1.0-rc1-4-g4b81725",
+			"Rev": "4b8172520a03fa190f427bbd284db01b459bfce7"
+		},
+		{
+			"ImportPath": "github.com/coopernurse/gorp",
+			"Comment": "v1.6.1",
+			"Rev": "31a7c02fabe8965c887cd243e381ce08328f3741"
+		},
+		{
+			"ImportPath": "github.com/go-martini/martini",
+			"Comment": "v1.0-27-g6d22115",
+			"Rev": "6d22115736ff94392c11684f7cbe1a5143430ee3"
+		},
+		{
+			"ImportPath": "github.com/lib/pq",
+			"Rev": "3e0659e626f761e9af7a8bd1c8b6aaea6770495b"
+		},
+		{
+			"ImportPath": "github.com/martini-contrib/binding",
+			"Rev": "f1fd5e76dcbcc36a4ff22a3e29dafe17c3e62700"
+		},
+		{
+			"ImportPath": "github.com/martini-contrib/render",
+			"Rev": "b65063311fac6cbf84d3538f5715f7847e648322"
+		},
+		{
+			"ImportPath": "github.com/oxtoacart/bpool",
+			"Rev": "0f78ff9152c03745d1a47c9023af1b424e202c07"
+		}
+	]
+}
