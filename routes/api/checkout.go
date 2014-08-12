@@ -31,6 +31,8 @@ func CreateCheckoutItem(i models.Item, r *http.Request) (int, string) {
 		i.Title = GetHTMLTitle(i.Url)
 	}
 
+	fmt.Println(i)
+
 	_, err = models.CreateItem(&i, *u)
 
 	if err != nil {
