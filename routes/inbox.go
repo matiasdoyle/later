@@ -9,10 +9,12 @@ import (
 )
 
 func RenderInbox(r render.Render) {
-	u := models.User{Id: 1}
+	u, err := models.FindUserById(1)
+	if err != nil {
+		panic(err)
+	}
 
-	items, err := models.FindItems(u)
-
+	items, err := models.FindItems(*u)
 	if err != nil {
 		panic(err)
 	}
