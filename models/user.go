@@ -57,10 +57,21 @@ func CreateUser(u *User) (*User, error) {
 	return u, nil
 }
 
+func FindUserById(id int) (*User, error) {
+	u := User{}
+
+	err := db.SelectOne(&u, "SELECT * FROM users WHERE Id=$1", id)
+	if err != nil {
+		return nil, err
+	}
+
+	return &u, nil
+}
+
 func FindUserByToken(token string) (*User, error) {
 	users := []User{}
 
-	_, err := db.Select(&users, "SELECT * FROM users WHERE Token=?", token)
+	_, err := db.Select(&users, "SELECT * FROM users WHERE Token=$1", token)
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
@@ -74,7 +85,7 @@ func FindUserByToken(token string) (*User, error) {
 }
 
 func EmailUsed(email string) bool {
-	count, err := db.SelectInt("SELECT count(*) FROM users WHERE Email=?", email)
+	count, err := db.SelectInt("SELECT count(*) FROM users WHERE Email=$1", email)
 	if err != nil {
 		panic(err)
 	}

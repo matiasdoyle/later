@@ -2,10 +2,11 @@ package main
 
 import (
 	"database/sql"
+	"os"
 
 	"github.com/coopernurse/gorp"
 	"github.com/go-martini/martini"
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/lib/pq"
 	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/render"
 	"github.com/matiasdoyle/checkout/models"
@@ -31,12 +32,12 @@ func main() {
 }
 
 func setupDB() {
-	db, err := sql.Open("mysql", "root@/checkout?parseTime=true")
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		panic(err)
 	}
 
-	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.MySQLDialect{"InnoDB", "UTF8"}}
+	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.PostgresDialect{}}
 
 	models.Init(dbmap)
 }

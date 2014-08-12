@@ -45,7 +45,7 @@ func CreateItem(i *Item, u User) (*Item, error) {
 func FindItems(u User) ([]Item, error) {
 	items := []Item{}
 
-	_, err := db.Select(&items, "SELECT * FROM items WHERE UserId = ?", u.Id)
+	_, err := db.Select(&items, "SELECT * FROM items WHERE UserId = $1", u.Id)
 
 	if err != nil {
 		panic(err)
