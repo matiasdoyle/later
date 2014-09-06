@@ -1,20 +1,28 @@
 package routes
 
 import (
-	"fmt"
-
+	"github.com/martini-contrib/render"
 	"github.com/matiasdoyle/later/models"
 )
 
-func Signup(u models.User) (int, string) {
-	fmt.Println(u)
+type SignupResponse struct {
+	Error string `json:"error"`
+	Token string `json:"token"`
+}
 
+func Signup(u models.User, r render.Render) {
 	_, err := models.CreateUser(&u)
+	res := SignupResponse{}
+	statusCode := 200
 
 	if err != nil {
-		fmt.Println(err)
-		return 400, err.Error()
+		res.Error = err.Error()
+		statusCode = 400
 	}
 
-	return 200, "Created"
+	if u.Token != "" {
+		res.Token = u.Token
+	}
+
+	r.JSON(statusCode, res)
 }
