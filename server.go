@@ -27,6 +27,7 @@ func main() {
 	m.Post("/signup", binding.Bind(models.User{}), routes.Signup)
 
 	m.Post("/api/later", binding.Bind(models.Item{}), api.CreateCheckoutItem)
+	m.Get("/api/verify-token/:token", api.VerifyToken)
 
 	m.Run()
 }
