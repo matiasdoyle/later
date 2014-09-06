@@ -5,7 +5,7 @@ import (
 
 	"github.com/martini-contrib/render"
 
-	"github.com/matiasdoyle/checkout/models"
+	"github.com/matiasdoyle/later/models"
 )
 
 func RenderInbox(r render.Render) {

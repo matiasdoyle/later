@@ -3,7 +3,7 @@ package routes
 import (
 	"fmt"
 
-	"github.com/matiasdoyle/checkout/models"
+	"github.com/matiasdoyle/later/models"
 )
 
 func Signup(u models.User) (int, string) {

@@ -9,9 +9,9 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/martini-contrib/binding"
 	"github.com/martini-contrib/render"
-	"github.com/matiasdoyle/checkout/models"
-	"github.com/matiasdoyle/checkout/routes"
-	"github.com/matiasdoyle/checkout/routes/api"
+	"github.com/matiasdoyle/later/models"
+	"github.com/matiasdoyle/later/routes"
+	"github.com/matiasdoyle/later/routes/api"
 )
 
 func main() {
@@ -26,7 +26,7 @@ func main() {
 
 	m.Post("/signup", binding.Bind(models.User{}), routes.Signup)
 
-	m.Post("/api/checkout", binding.Bind(models.Item{}), api.CreateCheckoutItem)
+	m.Post("/api/later", binding.Bind(models.Item{}), api.CreateCheckoutItem)
 
 	m.Run()
 }

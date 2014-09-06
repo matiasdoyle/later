@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/matiasdoyle/checkout",
+	"ImportPath": "github.com/matiasdoyle/later",
 	"GoVersion": "go1.3",
 	"Deps": [
 		{

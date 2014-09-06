@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/matiasdoyle/checkout/models"
+	"github.com/matiasdoyle/later/models"
 )
 
 func CreateCheckoutItem(i models.Item, r *http.Request) (int, string) {
