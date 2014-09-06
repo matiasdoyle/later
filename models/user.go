@@ -57,15 +57,16 @@ func CreateUser(u *User) (*User, error) {
 	return u, nil
 }
 
-func FindUserById(id int) (*User, error) {
+func FindUserById(id int) *User {
 	u := User{}
 
 	err := db.SelectOne(&u, "SELECT * FROM users WHERE Id=$1", id)
 	if err != nil {
-		return nil, err
+		fmt.Println("FindUserById err with user_id:", id, err)
+		return nil
 	}
 
-	return &u, nil
+	return &u
 }
 
 func FindUserByToken(token string) (*User, error) {
